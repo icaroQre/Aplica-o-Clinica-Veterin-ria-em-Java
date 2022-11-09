@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <title>Gerenciar Usuários</title>
+    </h:head>
+    <h:body > 
+        <h:form id="formTabela">  
+            <p:dataTable id="tabelaUsuarios"  
+                         value="#{gerenciarUsuarioControle.lista}" 
+                         var="item"
+                         lazy="true"
+                         emptyMessage="Nenhum usuário cadastrado"
+                         tableStyle="width:auto;  min-width: 100%" >
+
+                <p:column headerText="Código">
+                    <h:outputText value="#{item.codigo}"/>
+                </p:column>
+                <p:column headerText="Nome">
+                    <h:outputText value="#{item.nome}"/>
+                </p:column>
+                <p:column headerText="Login">
+                    <h:outputText value="#{item.login}"/>
+                </p:column>
+                <p:column headerText="Telefone">
+                    <h:outputText value="#{item.telefone}"/>
+                </p:column>
+                <p:column headerText="Alterar"> 
+                    <p:commandLink value="alterar" />
+                </p:column>
+                <p:column headerText="Excluir"> 
+                    <p:commandLink value="excluir" />
+                </p:column>
+            </p:dataTable>
+        </h:form>
+
+    </h:body>
+</html>

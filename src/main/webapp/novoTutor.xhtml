@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    
+    <h:head>
+        <title>Sem título</title>
+    </h:head>
+    <h:body > 
+        <h:form>
+            <h:panelGrid columns="2">
+            
+            <h:outputLabel value="Nome: " />
+            <p:inputText id="nome" value="#{novoTutorControle.tutor.nome}"/>
+            
+            <h:outputLabel value="Telefone: " />
+            <p:inputText id="telefone" value="#{novoTutorControle.tutor.telefone}"/>
+            
+            <h:outputLabel value="Endereço: " />
+            <p:inputText id="endereco" value="#{novoTutorControle.tutor.endereco}"/>
+            
+            <h:outputLabel value="CPF: " />
+            <p:inputText id="cpf" value="#{novoTutorControle.tutor.cpf}"/>
+    
+            <!-- p:commandButton value="Entrar" styleClass="botao" action="menu" / -->
+            <p:commandButton value="Salvar"  
+                             action="#{novoTutorControle.salvar()}"
+                             update="@form" />
+            
+            </h:panelGrid>
+            
+            <p:commandLink action="index" value="Sair" styleClass="botaoLink" />
+            
+        </h:form>     
+    </h:body>
+    
+</html>
