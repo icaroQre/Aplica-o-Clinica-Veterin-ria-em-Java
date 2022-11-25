@@ -66,5 +66,21 @@ public class Dao<T> implements Serializable {
         manager.close();
         return lista;
     }
+    
+    public T buscarPorNome(String nome) {
+        T temp = null;
+        manager = JpaUtil.getEntityManager();
+        String sql = "SELECT o FROM "+ classe.getName() +" o WHERE o.nome = :nome";
+        TypedQuery<T> query = manager.createQuery(sql, classe);
+        query.setParameter("nome", nome);
+        try {
+            temp = query.getSingleResult();
+        } catch (Exception e) {  
+
+        } finally {
+            manager.close();
+        }
+        return temp;
+    }
 
 }
