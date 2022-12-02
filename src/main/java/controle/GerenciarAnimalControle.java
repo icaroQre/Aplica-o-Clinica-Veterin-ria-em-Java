@@ -8,6 +8,7 @@ import javax.faces.view.ViewScoped;
 import javax.inject.Named;
 import modelo.Animal;
 import modelo.Tutor;
+import modelo.Usuario;
 
 /**
  *
@@ -56,5 +57,10 @@ public class GerenciarAnimalControle implements Serializable {
     
     public void setLista(List<Animal> lista) {
         this.lista = lista;
+    }
+    
+    public void excluir(Animal excluido) {
+        dao.excluir(excluido.getCodigo());
+        lista = dao.listarTodos();
     }
 }
