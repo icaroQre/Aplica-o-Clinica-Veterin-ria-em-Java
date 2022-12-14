@@ -6,7 +6,7 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 
     <h:head>
-        <title>Sem título</title>
+        <title>Animais</title>
     </h:head>
     <h:body > 
         <h:panelGrid columns="2" style="width: 100%; text-align: right;">
@@ -57,16 +57,7 @@
                 </p:column>
                 <p:column headerText="Tutor">
                     <h:outputText value="#{item.tutor.nome}"/>
-                </p:column>  
-                
-                <p:column headerText="Excluir"> 
-                    <p:commandLink value="excluir" 
-                                   action="#{gerenciarAnimalControle.excluir(item)}" 
-                                   update="formTabela">
-                        <p:confirm header="Excluir tutor" message="Você tem certeza que deseja excluir este tutor?" 
-                                   icon="ui-icon-alert"/>
-                    </p:commandLink>
-                </p:column>
+                </p:column>   
                 
             </p:dataTable>
             

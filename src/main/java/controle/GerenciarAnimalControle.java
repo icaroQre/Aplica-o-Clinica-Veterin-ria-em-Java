@@ -22,6 +22,15 @@ public class GerenciarAnimalControle implements Serializable {
     private Animal animal;
     private Dao<Animal> dao;
     private List<Animal> lista;
+    private Animal animalSelecionado;
+
+    public Animal getAnimalSelecionado() {
+        return animalSelecionado;
+    }
+
+    public void setAnimalSelecionado(Animal animalSelecionado) {
+        this.animalSelecionado = animalSelecionado;
+    }
     
     @PostConstruct
     public void iniciar() {
@@ -62,5 +71,9 @@ public class GerenciarAnimalControle implements Serializable {
     public void excluir(Animal excluido) {
         dao.excluir(excluido.getCodigo());
         lista = dao.listarTodos();
+    }
+    
+    public void prepararVizualisar(Animal selecionado){
+        animalSelecionado = selecionado;
     }
 }
